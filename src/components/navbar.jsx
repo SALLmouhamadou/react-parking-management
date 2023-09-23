@@ -1,18 +1,31 @@
-import { NavLink} from "react-router-dom";
-import '../components/css/Navbar.css';
-function Navigation(){
+import { NavLink } from "react-router-dom";
+import './Navbar.css';
+function Navigation() {
 
-    return(
-        <div>
-            <nav classeName="navbar">
-                <div className="navbar-Logo"> <NavLink to="/">Parking GS</NavLink></div>
-                <ul className="navbar-link">
-                   <li className="navbar-link-item"><NavLink to="/">Accueil</NavLink></li>
-                   <li className="navbar-link-item"><NavLink to="/">Nouvelle Carte</NavLink></li>
-                   <li className="navbar-link-item"><NavLink to="/">Vérification</NavLink></li> 
-                   <li className="navbar-link-item"><NavLink to="/">Login</NavLink></li> 
-                </ul>
-            </nav>
-        </div>
+    return (
+        <nav className="navbar navbar-expand-lg bg-body-tertiary">
+            <div className="container-fluid">
+                <NavLink className="navbar-brand" to="/">Pari<span className="text-danger">GO</span></NavLink>
+                <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span className="navbar-toggler-icon"></span>
+                </button>
+                <div className="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li className="nav-item">
+                            <NavLink className="nav-link active" aria-current="page" to="/">Dashboard</NavLink>
+                        </li>
+                        <li className="nav-item">
+                            <NavLink className="nav-link" to="/card/add">New card</NavLink>
+                        </li>
+                        <li className="nav-item">
+                            <NavLink className="nav-link" to="/card/check">Check card</NavLink>
+                        </li>
+                        <li className="nav-item">
+                            <NavLink className="nav-link" to="/compte">Compte</NavLink>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
     )
 } export default Navigation;
